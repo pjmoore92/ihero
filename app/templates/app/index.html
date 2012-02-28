@@ -1,0 +1,9 @@
+{% if latest_incidents %}
+    <ul>
+    {% for i in latest_incidents %}
+        <li><a href="/app/{{ Incident.id }}/">{{ i.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Incidents Available</p>
+{% endif %}
