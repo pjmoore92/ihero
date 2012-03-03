@@ -4,13 +4,16 @@
 
 {% block content %}
 <div class="hero-unit">
+<div class="container">
   <input type="text" style="text-align:center" class="span5  search-query" placeholder="Search">
+  </div>
   <h2 style="text-align:center">Incident List</h2>
 </div>
 
 
 {% if latest_incidents %}
- <div class="accordion span6 offset3" id="accordion2">
+<div class="container">
+ <div class="accordion span5 offset3" id="accordion2">
 	 {% for i in latest_incidents %}
 	 <br>
             <div class="accordion-group">
@@ -45,6 +48,7 @@
     <p>No Incidents Available</p>
 
 {% endif %}
+</div>
     <!-- END OF VIEW -->
 
 {% endblock %}
