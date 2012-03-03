@@ -16,6 +16,16 @@
 
     <!-- Le styles -->
     <link rel="stylesheet" href="{{ paul }}bootstrap.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="{{ paul }}collapse.js"></script>
+    <script type="text/javascript" src="{{ paul }}jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="{{ paul }}jquery.form.js"></script>
+    <script type="text/javascript" src="{{ paul }}bootstrap-modal.js"></script>
+    <script type="text/javascript" src="{{ paul }}bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="{{ paul }}bootstrap-alert.js"></script>
+    <script type="text/javascript" src="{{ paul }}bootstrap-collapse.js"></script>
+    <script type="text/javascript" src="{{ paul }}jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="{{ paul }}script.js"></script>
+
 	<style>
 	body {
 		padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -53,18 +63,35 @@
 <h2 style="text-align:center">Incident List</h2>
 </div>
 
-
+<div class="accordion" id="accordion2">
 {% if latest_incidents %}
-    <ul>
     {% for i in latest_incidents %}
-	<label for="remember" style="float:left" class="label label-success"> {{ i.title }} </label>
-	</br>
-	<p> {{i.description}} </p>
+            <div class="accordion-group">
+	<div class="accordion-heading">
+		<a
+			class="accordion-toggle"
+			data-toggle="collapse"
+			data-parent="#accordion2"
+			href="#"
+		>
+			{{i.title}}<i>- Click to Expand</i>
+		</a>
+	</div>
+	<div id="{{i.id}}" class="accordion-body collapse">
+		<div class="accordion-inner">
+			<div class="well">
+			{{i.description}}
+			</div><!-- end .well -->
+		</div>
+	</div>
+</div>
     {% endfor %}
-    </ul>
 {% else %}
+<div>
     <p>No Incidents Available</p>
+</div>   
 {% endif %}
+
 
 
     <!-- END OF VIEW -->
