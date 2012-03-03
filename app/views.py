@@ -1,24 +1,21 @@
 from app.models import Incident
 from django.http import HttpResponse
-from django.template import Context, loader
-
+from django.shortcuts import render_to_response
 
 def index( request ):
     latest_incidents = Incident.objects.all()
-    t = loader.get_template( 'app/index.html' )
-    c = Context( { 'latest_incidents': latest_incidents, } )
-    return HttpResponse( t.render( c ) )
+    return render_to_response( 'app/index.html', { 'latest_incidents': latest_incidents } )
 
 def submit( request ):
-    return HttpResponse( "Submit view" )
-
-def incident( request, incident_id ):
-    return HttpResponse( "You are looking at the incident %s" % incident_id )
+    return render_to_response( 'app/submit.html' )
 
 def about( request ):
-    return HttpResponse( "About us" )
+    return render_to_response( 'app/about.html' )
 
 def help( request ):
-    return HttpResponse( "Help page" )
+    return render_to_response( 'app/help.html' )
+
+def contact( request ):
+    return render_to_response( 'app/contact.html' )
 
 
