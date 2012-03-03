@@ -16,15 +16,14 @@
 
     <!-- Le styles -->
     <link rel="stylesheet" href="{{ paul }}bootstrap.css" type="text/css" media="screen" />
-    <script type="text/javascript" src="{{ paul }}collapse.js"></script>
-    <script type="text/javascript" src="{{ paul }}jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="{{ paul }}jquery.form.js"></script>
-    <script type="text/javascript" src="{{ paul }}bootstrap-modal.js"></script>
-    <script type="text/javascript" src="{{ paul }}bootstrap-dropdown.js"></script>
-    <script type="text/javascript" src="{{ paul }}bootstrap-alert.js"></script>
-    <script type="text/javascript" src="{{ paul }}bootstrap-collapse.js"></script>
-    <script type="text/javascript" src="{{ paul }}jquery-ui-1.8.17.custom.min.js"></script>
-    <script type="text/javascript" src="{{ paul }}script.js"></script>
+    <script src="{{ paul }}jquery-1.7.1.min.js"></script>
+    <script src="{{ paul }}jquery.form.js"></script>
+    <script src="{{ paul }}bootstrap-modal.js"></script>
+    <script src="{{ paul }}bootstrap-dropdown.js"></script>
+    <script src="{{ paul }}bootstrap-alert.js"></script>
+    <script src="{{ paul }}bootstrap-collapse.js"></script>
+    <script src="{{ paul }}jquery-ui-1.8.17.custom.min.js"></script>
+    <script src="{{ paul }}script.js"></script>
 
 	<style>
 	body {
@@ -63,37 +62,37 @@
 <h2 style="text-align:center">Incident List</h2>
 </div>
 
-<div class="accordion" id="accordion2">
+
+
+    
+        
+    
+
+
 {% if latest_incidents %}
-    {% for i in latest_incidents %}
+ <div class="accordion span5 offset4" id="accordion2">
+	 {% for i in latest_incidents %}
             <div class="accordion-group">
-	<div class="accordion-heading">
-		<a
-			class="accordion-toggle"
-			data-toggle="collapse"
-			data-parent="#accordion2"
-			href="#"
-		>
-			{{i.title}}<i>- Click to Expand</i>
-		</a>
-	</div>
-	<div id="{{i.id}}" class="accordion-body collapse">
-		<div class="accordion-inner">
-			<div class="well">
-			{{i.description}}
-			</div><!-- end .well -->
-		</div>
-	</div>
-</div>
-    {% endfor %}
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#{{i.id}}">
+                  {{i.title}}
+                </a>
+              </div>
+              <div id="{{i.id}}" class="accordion-body collapse in">
+                <div class="accordion-inner">
+                  {{i.description}}
+                </div>
+              </div>
+            </div>
+            
+	{% endfor %}
+	
+	
+          
 {% else %}
-<div>
     <p>No Incidents Available</p>
-</div>   
+
 {% endif %}
-
-
-
     <!-- END OF VIEW -->
 
   </body>
