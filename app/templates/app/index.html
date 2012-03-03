@@ -9,37 +9,30 @@
 </div>
 
 
-
-    
-        
-    
-
-
-  {% if latest_incidents %}
-  {% for i in latest_incidents %}
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a
-	 class="accordion-toggle"
-	 data-toggle="collapse"
-	 data-parent="#accordion2"
-	 href="#"
-	 >
-	{{i.title}}<i>- Click to Expand</i>
-      </a>
-    </div>
-    <div id="{{i.id}}" class="accordion-body collapse">
-      <div class="accordion-inner">
-	<div class="well">
-	  {{i.description}}
-	</div><!-- end .well -->
-      </div>
-    </div>
-  </div>
-  {% endfor %}
-  {% else %}
-  <div>
+{% if latest_incidents %}
+ <div class="accordion span5 offset4" id="accordion2">
+	 {% for i in latest_incidents %}
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#{{i.id}}">
+                  {{i.title}}
+                </a>
+              </div>
+              <div id="{{i.id}}" class="accordion-body collapse in">
+                <div class="accordion-inner">
+                  {{i.description}}
+                </div>
+              </div>
+            </div>
+            
+	{% endfor %}
+	
+	
+          
+{% else %}
     <p>No Incidents Available</p>
-  </div>   
-  {% endif %}
+
+{% endif %}
+    <!-- END OF VIEW -->
+
 {% endblock %}
