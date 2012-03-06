@@ -4,6 +4,7 @@ from django.shortcuts import render_to_response
 
 def index( request ):
     latest_incidents = Incident.objects.all()
+    latest_incidents = sorted( latest_incidents, key = lambda i: i.netVote(), reverse=True )
     return render_to_response( 'app/index.html', { 'latest_incidents': latest_incidents } )
 
 def submit( request ):
