@@ -4,46 +4,52 @@
 
 {% block content %}
 
-<h1>Incident View</h1>
-<legend>A list of all emergencies</legend>
-{% if latest_incidents %}
+<center>
+  <a href="/app/">Today</a>
+  <a href="/app/week">Week</a>
+  <a href="/app/month">Month</a>
+  <a href="/app/alltime">All Time</a>
+</center>
+{% if incidents %}
 <div class="container">
- <div class="accordion span5 offset3" id="accordion2">
-	 {% for i in latest_incidents %}
-	 <br>
-            <div class="accordion-group">
-              <div class="accordion-heading"><div class="btn btn-danger btn-small pull-right">Down: {{i.downvotes}}</div> <div class="btn btn-success btn-small pull-right">Up: {{i.upvotes}}</div>
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#{{i.id}}">
-                  {{i.title}} 
-                  </a>
-              </div>
-              <div id="{{i.id}}" class="accordion-body collapse">
-                <div class="accordion-inner">
-			<div class="well">
-				<div class="row">
-					<div class="span3">
-						<dl>
-							<dt>Submitted On</dt>
-								<dd>{{i.submission_time}}</dd>
-							
-						</dl>
-					</div>
-				</div>                	
-				{{i.description}}
-			</div>
-                </div>
-              </div>
-            </div>
-            
-	{% endfor %}
-	
-	
-          
-{% else %}
+  <div class="accordion span5 offset3" id="accordion2">
+    {% for i in incidents %}
+    <br>
+    <div class="accordion-group">
+      <div class="accordion-heading">
+	<div class="btn btn-danger btn-small pull-right">{{i.downvotes}}</div>
+	<div class="btn btn-success btn-small pull-right">{{i.upvotes}}</div>
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#{{i.id}}">
+          {{i.title}}
+        </a>
+      </div>
+      <div id="{{i.id}}" class="accordion-body collapse">
+        <div class="accordion-inner">
+	  <div class="well">
+	    <div class="row">
+	      <div class="span3">
+		<dl>
+		  <dt>Submitted On</dt>
+		  <dd>{{i.submission_time}}</dd>
+
+		</dl>
+	      </div>
+	    </div>
+	    {{i.description}}
+	  </div>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+
+
+
+    {% else %}
     <p>No Incidents Available</p>
 
-{% endif %}
-</div>
-    <!-- END OF VIEW -->
+    {% endif %}
+  </div>
+  <!-- END OF VIEW -->
 
-{% endblock %}
+  {% endblock %}
