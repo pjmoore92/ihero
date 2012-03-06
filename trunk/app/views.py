@@ -19,4 +19,6 @@ def help( request ):
 def contact( request ):
     return render_to_response( 'app/contact.html' )
 
-
+def hit(request, incident_ik):
+    Incident.objects.filter(ik=incident_ik).update(upvotes=F('upvotes')+1)
+    return HttpResponse()
