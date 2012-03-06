@@ -1,3 +1,6 @@
+import calendar
+import datetime
+from datetime import timedelta
 from django.db import models
 
 class Incident( models.Model ):
@@ -22,6 +25,17 @@ class Incident( models.Model ):
     def was_submitted_today( self ):
         return self.submission_time.date() == datetime.date.today()
 
-    
+    def was_submitted_past_week( self ):
+        delta = timedelta( days = 7 )
+        week_ago = datetime.date.today() - delta
+        return self.submission_time.date() >= week_ago
 
-    
+    def was_submitted_past_month( self ):
+        days_in_month = calendar.mdays[ datetime.date.today().month ]
+        delta = timedelta( days = days_in_month )
+        month_ago = datetime.date.today() - delta
+        return self.submission_time.date() >= month_ago
+
+
+
+
