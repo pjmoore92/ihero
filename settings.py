@@ -101,7 +101,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'trunk.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     '/users/level3/0906796b/Level-3/DIM3/ihero/app/templates'
