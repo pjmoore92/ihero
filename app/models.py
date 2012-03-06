@@ -4,8 +4,8 @@ class Incident( models.Model ):
     title = models.CharField( max_length = 200 )
     description = models.TextField()
     submission_time = models.DateTimeField( 'Submission Time' )
-    upvotes = models.IntegerField()
-    downvotes = models.IntegerField()
+    upvotes = models.PositiveIntegerField()
+    downvotes = models.PositiveIntegerField()
 
     def __unicode__( self ):
         return self.title
