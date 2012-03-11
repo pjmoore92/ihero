@@ -51,7 +51,7 @@ def addIncident( request ):
 
     if title and description:
         incident = Incident( title = title, description = description, location = location,
-                             submission_time = datetime.date.now(), upvotes = 0, downvotes = 0, category = category )
+                             submission_time = datetime.datetime.now(), upvotes = 0, downvotes = 0, category = category )
         incident.save()
     else:
         return render_to_response( 'app/submiterror.html' )
