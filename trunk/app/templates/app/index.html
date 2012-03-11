@@ -5,9 +5,9 @@
 {% block content %}
 
 <center>
-  <a href="/app/">Today</a>
-  <a href="/app/week">Week</a>
-  <a href="/app/month">Month</a>
+  <a href="/app/">Today |</a>
+  <a href="/app/week">Week |</a>
+  <a href="/app/month">Month |</a>
   <a href="/app/alltime">All Time</a>
 </center>
 {% if incidents %}
@@ -39,6 +39,9 @@
 	  <dl>
 		  <dt>Location</dt>
 		  <dd><img src="http://maps.googleapis.com/maps/api/staticmap?center={{i.location}}&zoom=16&size=400x400&maptype=hybrid&sensor=true"/></dd>
+		  <dt>Street View</dt>
+		  <dd><img src="http://maps.googleapis.com/maps/api/streetview?size=400x400&location={{i.location}}&sensor=false"></dd>
+		  
 		</dl>
         </div>
       </div>
