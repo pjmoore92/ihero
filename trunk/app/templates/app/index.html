@@ -37,11 +37,12 @@
 									{{i.description}}
 								</div>
 				  <dl>
+						{% if i.location %}
 					  <dt>Location</dt>
 					  <dd><img src="http://maps.googleapis.com/maps/api/staticmap?center={{i.location}}&zoom=16&size=400x400&maptype=hybrid&sensor=true"/></dd>
 					  <dt>Street View</dt>
 					  <dd><img src="http://maps.googleapis.com/maps/api/streetview?size=400x400&location={{i.location}}&sensor=false"></dd>
-					  
+						{% endif %}
 					</dl>
 				</div>
 	      </div>
