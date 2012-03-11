@@ -31,12 +31,15 @@
 		<dl>
 		  <dt>Submitted On</dt>
 		  <dd>{{i.submission_time}}</dd>
-
 		</dl>
 	      </div>
 	    </div>
 	    {{i.description}}
 	  </div>
+	  <dl>
+		  <dt>Location</dt>
+		  <dd><img src="http://maps.googleapis.com/maps/api/staticmap?center={{i.location}}&zoom=16&size=400x400&maptype=hybrid&sensor=true"/></dd>
+		</dl>
         </div>
       </div>
     </div>

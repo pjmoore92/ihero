@@ -9,6 +9,7 @@ class Incident( models.Model ):
     submission_time = models.DateTimeField( 'Submission Time' )
     upvotes = models.PositiveIntegerField()
     downvotes = models.PositiveIntegerField()
+    location = models.TextField()
 
     def __unicode__( self ):
         return self.title
