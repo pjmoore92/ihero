@@ -81,7 +81,7 @@ We provide our brand logo in the customary top left position to provide feedback
 
 If the user opts to input more information the form will expand and allow them to upload a picture, video, extra details including the time of the incident, a box to give more details and also a tags field to aid searches.
 
-The emergency services have a different view, accessible by the button labelled “Emergency Services Login” (Label 6) This will provide a listing of all the incidents and events, sortable on different categories. Emergency services will have the right to delete rogue information that they know to be untrue or exaggerated.
+The emergency services have a different view, accessible by the button labelled ``Emergency Services Login'' (Label 6) This will provide a listing of all the incidents and events, sortable on different categories. Emergency services will have the right to delete rogue information that they know to be untrue or exaggerated.
 
 This easy, appealing and simple user interface allows the user to quickly fill out the emergency report and submit it to the iHero system - no complicated forms, a few select number of fields, and all in one page.
 
@@ -176,7 +176,7 @@ The backend services are comprised mainly of SQLITE, responsible for data query 
 \subsection{Data Model}
 
 \begin{center}
-  \includegraphics[scale=0.4]{img/4.png}
+  \includegraphics[scale=0.5]{img/4.png}
 \end{center}
 
 \begin{itemize}
@@ -191,7 +191,7 @@ Our design has enabled a change in one tier to be independent from other tiers u
 \newpage
 \section{Message Passing}
 
-\includegraphics[scale=0.3]{img/3.png}
+\includegraphics[scale=0.4]{img/3.png}
 
 \begin{enumerate}
 \item    User reports an incident, entering the time, location and description of the incident.
@@ -331,6 +331,7 @@ provided by the user and update the following:
 center = new google.maps.LatLng( lat, long )
 \end{verbatim}
 
+\newpage
 \section{Design Revision / Feedback}
 The main theme of the feedback on our specification report was of small changes to increase the clarity of our design. A few people noted that our required functionality seemed ambitious and how we referred to ``desired functionality'' later on in the document when we had never specified it to begin with. It quickly became clear that when transferring our report to LaTeX the ``desired functionality'' heading was omitted. A lack of labels and titles on diagrams was also brought up, and our peers questioned the ER diagram.  One reviewer wanted a design decision explained, asking ``The difference between CSS and CSS(Twitter Bootstrap) is not explained, why did you choose the twitter bootstrap over the original?''. Another person commented that the voting system could be abused.
 
@@ -355,7 +356,24 @@ One of the main problems we faced was the learning curve of the django framework
 \section{Acknowledgements}
 Our thanks to the lecturers and demonstrators for their comments and suggestions. And our thanks to the peer reviewers for their feedback.
 
-\bibliographystyle{abbrv}
-\bibliography{sig-proc}
+\begin{thebibliography}{9}
+
+\bibitem{jakob1}
+  Jakob Nielsen,
+  \emph{Heuristics for User Interface}.
+
+\bibitem{jakob}
+  Django Documentation,
+  \emph{https://www.djangoproject.com/}.
+
+\bibitem{twitter}
+  Twitter Bootstrap,
+  \emph{http://twitter.github.com/bootstrap/index.html}.
+
+\bibitem{Stack}
+  StackOverflow,
+  \emph{http://stackoverflow.com/}.
+
+\end{thebibliography}
 
 \end{document}

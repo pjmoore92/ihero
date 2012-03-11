@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.3.9)  11 MAR 2012 23:29
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.3.9)  11 MAR 2012 23:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -395,16 +395,21 @@ Overfull \hbox (14.46202pt too wide) in paragraph at lines 159--160
 []\T1/aer/m/n/9 Passes this data on to the Back-end Server (Database). 
  []
 
-<img/4.png, id=23, 347.2975pt x 204.765pt>
+<img/4.png, id=23, 431.6125pt x 204.765pt>
 File: img/4.png Graphic file (type png)
  <use img/4.png>
 Package pdftex.def Info: img/4.png used on input line 179.
-(pdftex.def)             Requested size: 138.91653pt x 81.90454pt.
+(pdftex.def)             Requested size: 215.80571pt x 102.38223pt.
  [3 <./img/2.png> <./img/4.png>] <img/3.png, id=28, 628.3475pt x 730.73pt>
 File: img/3.png Graphic file (type png)
  <use img/3.png>
 Package pdftex.def Info: img/3.png used on input line 194.
-(pdftex.def)             Requested size: 188.50569pt x 219.22069pt.
+(pdftex.def)             Requested size: 251.33455pt x 292.28682pt.
+
+Overfull \hbox (20.33455pt too wide) in paragraph at lines 194--195
+[][] 
+ []
+
 
 Overfull \hbox (19.64568pt too wide) in paragraph at lines 199--200
 []\T1/aer/m/n/9 Middleware Server com-mu-ni-cates this query to the database
@@ -425,16 +430,14 @@ Overfull \hbox (6.37875pt too wide) in paragraph at lines 271--271
 []\T1/aett/m/n/8 http://search.twitter.com/search.json?rrp=1&q=incidentName[] 
  []
 
-[4 <./img/3.png>] [5]
-No file report.bbl.
-[6
+[4 <./img/3.png>] [5] [6
 
 ] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 3133 strings out of 493629
- 38732 string characters out of 3148779
- 101919 words of memory out of 3000000
- 6323 multiletter control sequences out of 15000+200000
+ 3137 strings out of 493629
+ 38777 string characters out of 3148779
+ 101931 words of memory out of 3000000
+ 6328 multiletter control sequences out of 15000+200000
  55838 words of font info for 77 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  42i,12n,26p,1352b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -448,7 +451,7 @@ hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf-dist
 vetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/
 share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (6 pages, 357569 bytes).
+Output written on report.pdf (6 pages, 366180 bytes).
 PDF statistics:
  76 PDF objects out of 1000 (max. 8388607)
  49 compressed objects within 1 object stream
