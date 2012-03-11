@@ -3881,6 +3881,7 @@ a.thumbnail:hover {
 @media (min-width: 980px) {
   .nav-collapse.collapse {
     height: auto !important;
+    overflow: !important visible
   }
 }
 @media (min-width: 1200px) {
