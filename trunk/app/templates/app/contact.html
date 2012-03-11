@@ -1,9 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %}Contact{% endblock %}
+{% block title %}Contact Us{% endblock %}
 
 {% block content %}
-<h1>Contact</h1>
+<center>
+	<h1>Contact us</h1>
+	<br>
+	<form action="/app/contact" method="POST">
+		<table>
+			{{ form.as_table }}
+		</table>
+		<p><input type="submit" value="Submit"></p>
+	</form>
+</center>
 {% endblock %}
 
 

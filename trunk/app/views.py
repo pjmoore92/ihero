@@ -2,6 +2,9 @@ from app.models import Incident
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.db.models import Q
+from django.core.mail import send_mail
+from forms import ContactForm
+import datetime
 
 
 def index( request ):
@@ -23,6 +26,13 @@ def allTime( request ):
     incidents = sorted( Incident.objects.all(), key = lambda i: i.netVote(), reverse=True )
     return render_to_response( 'app/index.html', { 'incidents': incidents } )
 
+def addVote( request, incident_id ):
+    incident = Incident.objects.get( pk = incident_id )
+    downvote = request.GET.get( 'down', '' )
+    incident.decVote() if downvote else incident.incVote()
+    incident.save()
+    return render_to_response( 'app/index.html' )
+
 def submit( request ):
     return render_to_response( 'app/submit.html' )
 
@@ -32,10 +42,16 @@ def about( request ):
 def help( request ):
     return render_to_response( 'app/help.html' )
 
-def contact( request ):
-    return render_to_response( 'app/contact.html' )
+def addIncident( request ):
+    title = request.GET.get( 'title', '' )
+    description = request.GET.get( 'description', '' )
 
-def addIncident( request, title, description ):
+    if title and description:
+        incident = Incident( title = title, description = description,
+                             submission_time = datetime.date.today(), upvotes = 0, downvotes = 0 )
+        incident.save()
+    else:
+        return render_to_response( 'app/index.html' )
     return render_to_response( 'app/addIncident.html' );
 
 def hit(request, incident_ik):
@@ -51,3 +67,15 @@ def search( request ):
     else:
         results = []
     return render_to_response( "app/index.html", { "incidents" : results } )
+
+def contact( request ):
+    if request.method == 'POST':
+        form = ContactForm( request.POST )
+        if form.is_valid():
+            fdata = form.cleaned_data
+            send_mail( fdata[ 'topic' ], fdata[ 'message' ], 
+                       fdata[ 'sender' ], [ 'gareeblackwood@gmail.com' ] )
+            return render_to_response( 'app/thanks.html' )
+    else:
+        form = ContactForm()
+    return render_to_response( 'app/contact.html', { "form" : form } )
