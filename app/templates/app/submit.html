@@ -4,13 +4,13 @@
 
 {% block content %}
 
-<form class="form-horizontal" action="/app/addIncident">
+<form class="form-horizontal" action="/app/addIncident" method="GET">
   <fieldset>
     <legend>What is the nature of your Emergency?</legend>
     <div class="control-group">
       <label class="control-label" for="input01">Incident Name</label>
       <div class="controls">
-        <input type="text" class="input-xlarge" id="input01">
+        <input type="text" name="title" class="input-xlarge" id="input01">
         <p class="help-block">Short Incident title</p>
       </div>
     </div>
@@ -36,7 +36,7 @@
     <div class="control-group">
       <label class="control-label" for="textarea">Details of Incident</label>
       <div class="controls">
-        <textarea class="input-xlarge" id="textarea" rows="3"></textarea>
+        <textarea class="input-xlarge" name="description" id="textarea" rows="3"></textarea>
         <p class="help-block">Please give as much detail as you can.</p>
       </div>
     </div>

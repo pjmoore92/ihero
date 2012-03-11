@@ -157,3 +157,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.contrib.messages.context_processors.messages',
 )
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER ='ihero.feedback@gmail.com'
+EMAIL_HOST_PASSWORD = 'iheroemail'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
