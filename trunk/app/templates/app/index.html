@@ -17,36 +17,34 @@
     <br>
     <div class="accordion-group">
       <div class="accordion-heading">
-				<form action="/app/addVote/{{i.id}}" method="GET">	
-					<input type="submit" name="down" value={{i.downvotes}} class="btn btn-danger btn-small pull-right">
-					<input type="submit" name="up" value={{i.upvotes}} class="btn btn-success btn-small pull-right">
-				</form>
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#{{i.id}}">
-          {{i.title}}
-        </a>
+      	<form action="/app/addVote/{{i.id}}" method="GET">
+      		<input type="submit" name="down" value={{i.downvotes}} class="btn btn-danger btn-small pull-right">
+      		<input type="submit" name="up" value={{i.upvotes}} class="btn btn-success btn-small pull-right">
+      	</form>
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#{{i.id}}">{{i.title}}</a>
       </div>
-      <div id="{{i.id}}" class="accordion-body collapse">
-        <div class="accordion-inner">
-					<div class="well">
-						<div class="row">
-							<div class="span3">
-								<dl>
-									<dt>Submitted On</dt>
-									<dd>{{i.submission_time}}</dd>
-								</dl>
-							</div>
-						</div>
-						{{i.description}}
-					</div>
-	  <dl>
-		  <dt>Location</dt>
-		  <dd><img src="http://maps.googleapis.com/maps/api/staticmap?center={{i.location}}&zoom=16&size=400x400&maptype=hybrid&sensor=true"/></dd>
-		  <dt>Street View</dt>
-		  <dd><img src="http://maps.googleapis.com/maps/api/streetview?size=400x400&location={{i.location}}&sensor=false"></dd>
-		  
-		</dl>
-        </div>
-      </div>
+	      <div id="{{i.id}}" class="accordion-body collapse">
+				<div class="accordion-inner">
+								<div class="well">
+									<div class="row">
+										<div class="span3">
+											<dl>
+												<dt>Submitted On</dt>
+												<dd>{{i.submission_time}}</dd>
+											</dl>
+										</div>
+									</div>
+									{{i.description}}
+								</div>
+				  <dl>
+					  <dt>Location</dt>
+					  <dd><img src="http://maps.googleapis.com/maps/api/staticmap?center={{i.location}}&zoom=16&size=400x400&maptype=hybrid&sensor=true"/></dd>
+					  <dt>Street View</dt>
+					  <dd><img src="http://maps.googleapis.com/maps/api/streetview?size=400x400&location={{i.location}}&sensor=false"></dd>
+					  
+					</dl>
+				</div>
+	      </div>
     </div>
 
     {% endfor %}
@@ -58,6 +56,7 @@
 
     {% endif %}
   </div>
+ </div>
   <!-- END OF VIEW -->
 
   {% endblock %}
