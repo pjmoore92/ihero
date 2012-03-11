@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.db.models import Q
 
+
 def index( request ):
     incidents = sorted( Incident.objects.all(), key = lambda i: i.netVote(), reverse=True )
     incidents = filter( lambda i: i.was_submitted_today(), incidents )

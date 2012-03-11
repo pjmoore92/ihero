@@ -57,22 +57,13 @@
 						<form class="navbar-search pull-left" action="/app/search" method="GET">
   						<input type="text" name="q" class="search-query" placeholder="Search">
 						</form>
-						<ul class="nav pull-right">
-							<li class="dropdown" data-dropdown="dropdown">
-								<a href="#" class="dropdown-toggle">
-									Emergency Responders		<b class="caret"></b>
-								</a>
-								<ul class="dropdown-menu">
-										      <form class="navbar-search pull-left">
-  		<input type="text" class="search-query" placeholder="Search">
-	      </form>
+
 	      <ul class="nav pull-right">
 	    <li class="dropdown" data-dropdown="dropdown">
               <a href="#" class="dropdown-toggle">
                 Emergency Responders		<b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-<div id="content-main">
 	<form action="/admin/" method="post" id="login-form">{% csrf_token %}
 	  <div class="form-row">
 	    {% if not form.this_is_the_login_form.errors %}{{ form.username.errors }}{% endif %}
