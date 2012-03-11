@@ -10,6 +10,7 @@ class Incident( models.Model ):
     upvotes = models.PositiveIntegerField()
     downvotes = models.PositiveIntegerField()
     location = models.TextField()
+    category = models.TextField()
 
     def __unicode__( self ):
         return self.title

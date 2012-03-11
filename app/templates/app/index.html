@@ -3,7 +3,6 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-
 <center>
   <a href="/app/">Today |</a>
   <a href="/app/week">Week |</a>
@@ -17,11 +16,13 @@
     <br>
     <div class="accordion-group">
       <div class="accordion-heading">
-      	<form action="/app/addVote/{{i.id}}" method="GET">
+				<form action="/app/addVote/{{i.id}}" method="GET">
       		<input type="submit" name="down" value={{i.downvotes}} class="btn btn-danger btn-small pull-right">
       		<input type="submit" name="up" value={{i.upvotes}} class="btn btn-success btn-small pull-right">
       	</form>
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#{{i.id}}">{{i.title}}</a>
+
+
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#{{i.id}}"><img src="/static/images/{{i.category}}.png" width=20 height=20 />{{i.title}}</a>
       </div>
 	      <div id="{{i.id}}" class="accordion-body collapse">
 				<div class="accordion-inner">

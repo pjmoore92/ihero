@@ -46,10 +46,12 @@ def addIncident( request ):
     title = request.GET.get( 'title', '' )
     description = request.GET.get( 'description', '' )
     location = request.GET.get( 'location', '' )
+    category = request.GET.get( 'category', '' )
+    print category
 
     if title and description:
         incident = Incident( title = title, description = description, location = location,
-                             submission_time = datetime.date.today(), upvotes = 0, downvotes = 0 )
+                             submission_time = datetime.date.today(), upvotes = 0, downvotes = 0, category = category )
         incident.save()
     else:
         return render_to_response( 'app/index.html' )
@@ -63,7 +65,8 @@ def search( request ):
     query = request.GET.get( 'q', '' )
     if query:
         qset = ( Q( title__icontains = query ) |
-                 Q( description__icontains = query ) )
+                 Q( description__icontains = query ) |
+                 Q( location__icontains = query ) )
         results = Incident.objects.filter( qset ).distinct()
     else:
         results = []
