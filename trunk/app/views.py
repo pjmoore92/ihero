@@ -31,7 +31,7 @@ def addVote( request, incident_id ):
     downvote = request.GET.get( 'down', '' )
     incident.decVote() if downvote else incident.incVote()
     incident.save()
-    return render_to_response( 'app/index.html' )
+    return render_to_response( 'app/voted.html' )
 
 def submit( request ):
     return render_to_response( 'app/submit.html' )
