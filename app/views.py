@@ -45,9 +45,10 @@ def help( request ):
 def addIncident( request ):
     title = request.GET.get( 'title', '' )
     description = request.GET.get( 'description', '' )
+    location = request.GET.get( 'location', '' )
 
     if title and description:
-        incident = Incident( title = title, description = description,
+        incident = Incident( title = title, description = description, location = location,
                              submission_time = datetime.date.today(), upvotes = 0, downvotes = 0 )
         incident.save()
     else:
