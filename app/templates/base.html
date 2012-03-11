@@ -11,8 +11,8 @@
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+				<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+				<![endif]-->
 
     <!-- Le styles -->
     <link rel="stylesheet" href="{{ st_root }}bootstrap.css" type="text/css" media="screen" />
@@ -48,41 +48,41 @@
         <div class="container">
           <a href="/app/" class="brand">iHero</a>          <div class="nav-collapse">
             <ul class="nav">
-	      <li><a href="/app/submit">Submit</a></li>
-	      <li><a href="/app/about">About</a></li>
-	      <li><a href="/app/contact">Contact</a></li>
-	      <li><a href="/app/help">Help</a></li>
-	     </ul>
-	      <form class="navbar-search pull-left">
-  		<input type="text" class="search-query" placeholder="Search">
-	      </form>
-	      <ul class="nav pull-right">
-	    <li class="dropdown" data-dropdown="dropdown">
-              <a href="#" class="dropdown-toggle">
-                Emergency Responders		<b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-<form action="/admin/" method="post" id="login-form"><div style='display:none;'>{% csrf_token %}<input type='hidden' id='csrfmiddlewaretoken' name='csrfmiddlewaretoken' value='edfa678121b883cc7ea34afffad692fe' /></div><div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='edfa678121b883cc7ea34afffad692fe' /></div>
-  <div class="form-row">
-    
-    <label for="id_username" class="required">Username:</label> <input id="id_username" type="text" name="username" maxlength="30" />
-  </div>
-  <div class="form-row">
-    
-    <label for="id_password" class="required">Password:</label> <input type="password" name="password" id="id_password" />
-    <input type="hidden" name="this_is_the_login_form" value="1" />
-    <input type="hidden" name="next" value="/admin/" />
-  </div>
-  <div class="submit-row">
-    <label>&nbsp;</label><input type="submit" value="Log in" />
-  </div>
-</form>
+							<li><a href="/app/submit">Submit</a></li>
+							<li><a href="/app/about">About</a></li>
+							<li><a href="/app/contact">Contact</a></li>
+							<li><a href="/app/help">Help</a></li>
+						</ul>
+						<form class="navbar-search pull-left" action="/app/search" method="GET">
+  						<input type="text" name="q" class="search-query" placeholder="Search">
+						</form>
+						<ul class="nav pull-right">
+							<li class="dropdown" data-dropdown="dropdown">
+								<a href="#" class="dropdown-toggle">
+									Emergency Responders		<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<form action="/admin/" method="post" id="login-form"><div style='display:none;'>{% csrf_token %}<input type='hidden' id='csrfmiddlewaretoken' name='csrfmiddlewaretoken' value='edfa678121b883cc7ea34afffad692fe' /></div><div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='edfa678121b883cc7ea34afffad692fe' /></div>
+										<div class="form-row">
+											
+											<label for="id_username" class="required">Username:</label> <input id="id_username" type="text" name="username" maxlength="30" />
+										</div>
+										<div class="form-row">
+											
+											<label for="id_password" class="required">Password:</label> <input type="password" name="password" id="id_password" />
+											<input type="hidden" name="this_is_the_login_form" value="1" />
+											<input type="hidden" name="next" value="/admin/" />
+										</div>
+										<div class="submit-row">
+											<label>&nbsp;</label><input type="submit" value="Log in" />
+										</div>
+									</form>
 
-<script type="text/javascript">
-document.getElementById('id_username').focus()
-</script>
-</div>
-</ul>
+									<script type="text/javascript">
+										document.getElementById('id_username').focus()
+									</script>
+					</div>
+					</ul>
 </li>
 
 
@@ -92,17 +92,17 @@ document.getElementById('id_username').focus()
 </form>
 </div>
 </form>              </ul>
-            </li>
-            
-                    </ul>
+</li>
 
-              
-	  </div>
-	</div>
-      </div>
+</ul>
 
-      <div id="content">
+
+</div>
+</div>
+</div>
+
+<div id="content">
 	{% block content %}{% endblock %}
-      </div>
-  </body>
+</div>
+</body>
 </html>

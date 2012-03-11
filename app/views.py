@@ -1,6 +1,7 @@
 from app.models import Incident
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
+from django.db.models import Q
 
 def index( request ):
     incidents = sorted( Incident.objects.all(), key = lambda i: i.netVote(), reverse=True )
@@ -33,6 +34,19 @@ def help( request ):
 def contact( request ):
     return render_to_response( 'app/contact.html' )
 
+def addIncident( request, title, description ):
+    return render_to_response( 'app/addIncident.html' );
+
 def hit(request, incident_ik):
     Incident.objects.filter(ik=incident_ik).update(upvotes=F('upvotes')+1)
     return HttpResponse()
+
+def search( request ):
+    query = request.GET.get( 'q', '' )
+    if query:
+        qset = ( Q( title__icontains = query ) |
+                 Q( title__icontains = query ) )
+        results = Incident.objects.filter( qset ).distinct()
+    else:
+        results = []
+    return render_to_response( "app/index.html", { "incidents" : results } )
