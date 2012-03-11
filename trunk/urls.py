@@ -13,6 +13,7 @@ urlpatterns = patterns('',
                        url( r'^app/alltime$', 'app.views.allTime' ),
                        url( r'^app/week$', 'app.views.week' ),
                        url( r'^app/month$', 'app.views.month' ),
+                       url( r'^app/search$', 'app.views.search' ),
                        url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
                        url(r'^admin/', include(admin.site.urls)),
 )
