@@ -45,7 +45,7 @@ def search( request ):
     query = request.GET.get( 'q', '' )
     if query:
         qset = ( Q( title__icontains = query ) |
-                 Q( title__icontains = query ) )
+                 Q( description__icontains = query ) )
         results = Incident.objects.filter( qset ).distinct()
     else:
         results = []
