@@ -17,8 +17,11 @@
     <div class="accordion-group">
       <div class="accordion-heading">
 				<form action="/app/addVote/{{i.id}}" method="GET">
+
       		<input type="submit" name="down" value={{i.downvotes}} class="btn btn-danger btn-small pull-right">
+		<i class="icon-arrow-down pull-right"></i>
       		<input type="submit" name="up" value={{i.upvotes}} class="btn btn-success btn-small pull-right">
+      		<i class="icon-arrow-up pull-right"></i>
       	</form>
 
 
